@@ -1,0 +1,561 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "console",
+            "intents": [
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "TestAlexa",
+                    "slots": [],
+                    "samples": [
+                        "test the light",
+                        "hack"
+                    ]
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "hackWeather",
+                    "slots": [],
+                    "samples": [
+                        "weather in hack dfw"
+                    ]
+                },
+                {
+                    "name": "AMAZON.SearchAction<object@WeatherForecast>",
+                    "samples": []
+                },
+                {
+                    "name": "StateFarmInsuranceIntent",
+                    "slots": [
+                        {
+                            "name": "insurance_type",
+                            "type": "insurance_type",
+                            "samples": [
+                                "disability",
+                                "health",
+                                "life",
+                                "property",
+                                "house",
+                                "vehicle"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "state farm insurance",
+                        "state farm {insurance_type} insurance"
+                    ]
+                },
+                {
+                    "name": "StateFarmLoanIntent",
+                    "slots": [
+                        {
+                            "name": "loan_type",
+                            "type": "loan_type",
+                            "samples": [
+                                "car",
+                                "vehicle",
+                                "house",
+                                "home"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "state farm loan",
+                        "state farm {loan_type} loans"
+                    ]
+                },
+                {
+                    "name": "AskQuoteIntent",
+                    "slots": [
+                        {
+                            "name": "insurance_type",
+                            "type": "insurance_type"
+                        },
+                        {
+                            "name": "type",
+                            "type": "type"
+                        }
+                    ],
+                    "samples": [
+                        "{insurance_type} {type} quote",
+                        "I want {insurance_type} {type} quote"
+                    ]
+                },
+                {
+                    "name": "BuyIntent",
+                    "slots": [
+                        {
+                            "name": "object",
+                            "type": "object",
+                            "samples": [
+                                "house",
+                                "home",
+                                "property",
+                                "car"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "I am buying an {object}",
+                        "I bought an {object}",
+                        "I bought a {object}",
+                        "I am buying a {object}"
+                    ]
+                },
+                {
+                    "name": "YesIntent",
+                    "slots": [
+                        {
+                            "name": "type",
+                            "type": "type",
+                            "samples": [
+                                "insurance",
+                                "loan"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "no",
+                        "{type}",
+                        "yes {type}",
+                        "yes I want a {type}",
+                        "I want a {type}"
+                    ]
+                },
+                {
+                    "name": "AgeIntent",
+                    "slots": [
+                        {
+                            "name": "age",
+                            "type": "age"
+                        }
+                    ],
+                    "samples": [
+                        "{age} years",
+                        "{age}"
+                    ]
+                },
+                {
+                    "name": "ExpIntent",
+                    "slots": [
+                        {
+                            "name": "exp",
+                            "type": "exp"
+                        }
+                    ],
+                    "samples": [
+                        "{exp} years",
+                        "{exp}"
+                    ]
+                },
+                {
+                    "name": "LoanTermIntent",
+                    "slots": [
+                        {
+                            "name": "loan_term",
+                            "type": "loan_term"
+                        }
+                    ],
+                    "samples": [
+                        "{loan_term} months",
+                        "{loan_term}",
+                        "{loan_term} years"
+                    ]
+                },
+                {
+                    "name": "HangingIntent",
+                    "slots": [],
+                    "samples": [
+                        "you left me hanging"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "insurance_type",
+                    "values": [
+                        {
+                            "id": "HNP",
+                            "name": {
+                                "value": "house & property",
+                                "synonyms": [
+                                    "property",
+                                    "house"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "HND",
+                            "name": {
+                                "value": "health & disability",
+                                "synonyms": [
+                                    "disability",
+                                    "health"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "DIS",
+                            "name": {
+                                "value": "disability"
+                            }
+                        },
+                        {
+                            "id": "HEL",
+                            "name": {
+                                "value": "health"
+                            }
+                        },
+                        {
+                            "id": "LIF",
+                            "name": {
+                                "value": "life"
+                            }
+                        },
+                        {
+                            "id": "BUS",
+                            "name": {
+                                "value": "business",
+                                "synonyms": [
+                                    "small business"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "PRO",
+                            "name": {
+                                "value": "property",
+                                "synonyms": [
+                                    "land"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "HOM",
+                            "name": {
+                                "value": "home",
+                                "synonyms": [
+                                    "house"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "VEH",
+                            "name": {
+                                "value": "vehicle",
+                                "synonyms": [
+                                    "car"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "loan_type",
+                    "values": [
+                        {
+                            "id": "HO",
+                            "name": {
+                                "value": "home",
+                                "synonyms": [
+                                    "house"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "VE",
+                            "name": {
+                                "value": "vehicle",
+                                "synonyms": [
+                                    "car"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "type",
+                    "values": [
+                        {
+                            "id": "INS",
+                            "name": {
+                                "value": "insurance"
+                            }
+                        },
+                        {
+                            "id": "LOA",
+                            "name": {
+                                "value": "loan"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "object",
+                    "values": [
+                        {
+                            "id": "PROP",
+                            "name": {
+                                "value": "property",
+                                "synonyms": [
+                                    "land"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "HOME",
+                            "name": {
+                                "value": "home",
+                                "synonyms": [
+                                    "house"
+                                ]
+                            }
+                        },
+                        {
+                            "id": "CAR",
+                            "name": {
+                                "value": "car",
+                                "synonyms": [
+                                    "vehicle"
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "exp",
+                    "values": [
+                        {
+                            "id": "E3",
+                            "name": {
+                                "value": "3"
+                            }
+                        },
+                        {
+                            "id": "E2",
+                            "name": {
+                                "value": "2"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "age",
+                    "values": [
+                        {
+                            "id": "A24",
+                            "name": {
+                                "value": "24"
+                            }
+                        },
+                        {
+                            "id": "A23",
+                            "name": {
+                                "value": "23"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "loan_term",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "24"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "18"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "6"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "2"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "1"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "12"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "StateFarmInsuranceIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "insurance_type",
+                            "type": "insurance_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1364842564852.638357931349"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "StateFarmLoanIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "loan_type",
+                            "type": "loan_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.1303470143439.1215250817506"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AskQuoteIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "insurance_type",
+                            "type": "insurance_type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        },
+                        {
+                            "name": "type",
+                            "type": "type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                },
+                {
+                    "name": "BuyIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "object",
+                            "type": "object",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.765521872223.371966378662"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "YesIntent",
+                    "delegationStrategy": "ALWAYS",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "type",
+                            "type": "type",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.63640458992.27268648762"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "AgeIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "age",
+                            "type": "age",
+                            "confirmationRequired": false,
+                            "elicitationRequired": false,
+                            "prompts": {}
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.1303470143439.1215250817506",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Do you want to know home loans or vehicle loans"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.1364842564852.638357931349",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Which insurance are you looking for"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.765521872223.371966378662",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What are buying?"
+                    }
+                ]
+            },
+            {
+                "id": "Elicit.Slot.63640458992.27268648762",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "What do you want, insurance or loan?"
+                    }
+                ]
+            }
+        ]
+    }
+}
