@@ -1,9 +1,61 @@
+<html>
 <!-- AR.js by @jerome_etienne - github: https://github.com/jeromeetienne/ar.js - info: https://medium.com/arjs/augmented-reality-in-10-lines-of-html-4e193ea9fdbf -->
 <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
 <script src="https://cdn.rawgit.com/jeromeetienne/AR.js/1.6.0/aframe/build/aframe-ar.js"></script>
+<script src="/routes/jQuery.js"></script>
+<script>
+    
+    function fetchdata(){
+ $.ajax({
+  url: 'http://localhost:3000/alexa',
+  type: 'GET',
+  success: function(response){
+   console.log(response);
+    if(response["obj"]=="car"){
+        console.log("car")
+        $("a-entity").attr("obj-model","obj: url(routes/assets/car.obj);mtl: url(routes/assets/car.mtl)")
+    }
+    if(response["obj"]=="loan"){
+        $("a-entity").attr("obj-model","obj: url(routes/assets/loan.obj);mtl: url(routes/assets/loan.mtl)")
+        console.log("loan")
+    }
+    if(response["obj"]=="age"){
+        $("a-entity").attr("obj-model","obj: url(routes/assets/man.obj);mtl: url(routes/assets/man.mtl)")
+        console.log("age")
+    }
+    if(response["obj"]=="clock"){
+        $("a-entity").attr("obj-model","obj: url(routes/assets/clock.obj);mtl: url(routes/assets/clock.mtl)")
+        console.log("clock")
+    }
+    if(response["obj"]=="insurance"){
+        $("a-entity").attr("obj-model","obj: url(routes/assets/contract.obj);mtl: url(routes/assets/contract.mtl)")
+        console.log("insurance")
+    }
+    if(response["obj"]=="house"){
+        $("a-entity").attr("obj-model","obj: url(routes/assets/house.obj);mtl: url(routes/assets/house.mtl)")
+        console.log("house")
+    }
+    
+  }
+ });
+}
+
+$(document).ready(function(){
+ setInterval(fetchdata,500);
+});
+
+</script>
 <body style='margin : 0px; overflow: hidden;'>
-	<a-scene embedded arjs='sourceType: webcam;'>
-		<a-box position='0 0.5 0' material='opacity: 0.5;'></a-box>
-		<a-marker-camera preset='hiro'></a-marker-camera>
-	</a-scene>
-</body>
+        <a-scene embedded arjs=’sourceType: webcam;’>
+                <a-marker preset=’hiro’>
+                  <!-- Adding an OBJ file to an AR Project-->
+                  <a-entity 
+                      obj-model="obj: url(routes/assets/car.obj);mtl: url(routes/assets/car.mtl)">
+                  </a-entity>
+                        
+                </a-marker>
+            <a-entity camera>
+            </a-entity>
+            </a-scene>         
+</body> 
+</html>
